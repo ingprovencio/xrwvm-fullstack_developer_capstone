@@ -1,6 +1,7 @@
+'''Importamos'''
+import json
 from flask import Flask
 from nltk.sentiment import SentimentIntensityAnalyzer
-import json
 app = Flask("Sentiment Analyzer")
 
 sia = SentimentIntensityAnalyzer()

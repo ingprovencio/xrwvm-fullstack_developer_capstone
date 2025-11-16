@@ -1,7 +1,7 @@
-# Uncomment the following imports before adding the Model code
+'''Uncomment the following imports before adding the Model code'''
 
 from django.db import models
-from django.utils.timezone import now
+#from django.utils.timezone import now
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
@@ -13,6 +13,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 # - Any other fields you would like to include in car make model
 # - __str__ method to print a car make object
 class CarMake(models.Model):
+    '''Clase CarMake'''
     name = models.CharField(max_length=100)
     description = models.TextField()
     # Other fields as needed
@@ -29,6 +30,7 @@ class CarMake(models.Model):
 # - Any other fields you would like to include in car model
 # - __str__ method to print a car make object
 class CarModel(models.Model):
+    '''Clase CarModel'''
     car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)  # Many-to-One relationship
     name = models.CharField(max_length=100)
     CAR_TYPES = [
@@ -47,3 +49,4 @@ class CarModel(models.Model):
 
     def __str__(self):
         return self.name  # Return the name as the string representation
+    
